@@ -3,7 +3,7 @@ import { SliceComponentProps } from '@prismicio/react';
 
 export type GalleryProps = SliceComponentProps<Content.GallerySlice>;
 
-const GalleryHeader = ({ slice }: GalleryProps): JSX.Element => {
+const GalleryArticle = ({ slice }: GalleryProps): JSX.Element => {
   const {
     article_position: articlePosition,
     article_title: title,
@@ -54,4 +54,4 @@ const GalleryHeader = ({ slice }: GalleryProps): JSX.Element => {
   );
 };
 
-export default GalleryHeader;
+export default GalleryArticle;
