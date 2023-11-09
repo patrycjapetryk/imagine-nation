@@ -66,6 +66,11 @@ module.exports = {
     'lg:self-start',
     'lg:self-center',
     'lg:self-end',
+
+    'bg-[#E8ADB3]',
+    'bg-[#D9E7C4]',
+    'bg-[#AB4054]',
+    'bg-[#FBF3A0]',
   ],
   plugins: [],
 };

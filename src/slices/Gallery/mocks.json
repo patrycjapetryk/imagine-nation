@@ -57,6 +57,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "65",
 				"type": "Number"
+			},
+			"background_color": {
+				"__TYPE__": "FieldContent",
+				"value": "#cdb8cf",
+				"type": "Color"
 			}
 		},
 		"items": [

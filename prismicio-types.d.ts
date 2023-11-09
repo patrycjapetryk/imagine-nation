@@ -314,6 +314,16 @@ export interface GallerySliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#number
    */
   article_order_desktop: prismic.NumberField;
+
+  /**
+   * Background color field in *Gallery → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  background_color: prismic.ColorField;
 }
 
 /**

@@ -109,6 +109,13 @@
             "label": "Article order desktop",
             "placeholder": ""
           }
+        },
+        "background_color": {
+          "type": "Color",
+          "config": {
+            "label": "Background color",
+            "placeholder": ""
+          }
         }
       },
       "items": {

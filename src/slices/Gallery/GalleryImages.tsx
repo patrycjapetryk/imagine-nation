@@ -21,6 +21,8 @@ const GalleryImages = ({ slice }: GalleryProps): JSX.Element => {
   useEffect(() => {
     const ctx = gsap.context((self) => {
       const boxes: HTMLElement[] = self.selector && self.selector('.box');
+      const boxColors: HTMLElement[] = self.selector && self.selector('.boxColor');
+
       boxes.forEach((box) => {
         gsap.to(box, {
           scale: 1,
@@ -28,6 +30,18 @@ const GalleryImages = ({ slice }: GalleryProps): JSX.Element => {
             trigger: box,
             start: 'top bottom',
             end: 'bottom top',
+            scrub: true,
+          },
+        });
+      });
+
+      boxColors.forEach((boxColor) => {
+        gsap.to(boxColor, {
+          opacity: 0,
+          scrollTrigger: {
+            trigger: boxColor,
+            start: 'top 60%',
+            end: 'bottom 30%',
             scrub: true,
           },
         });
@@ -45,6 +59,8 @@ const GalleryImages = ({ slice }: GalleryProps): JSX.Element => {
       return 'self-start';
     }
   };
+
+  const { background_color: backgroundColor } = slice.primary;
 
   return (
     <div ref={imagesWrapper} className='relative flex flex-col flex-wrap w-full'>
@@ -80,9 +96,16 @@ const GalleryImages = ({ slice }: GalleryProps): JSX.Element => {
             lg:${imagePositionX(imagePositionDesktop)} 
             order-${index}
             ${imageMarginY && `lg:mt-[${imageMarginY}]`}
+            relative
           `}
           >
             <PrismicNextImage field={image} className='w-full' />
+            <div
+              className={`
+                boxColor w-full h-full absolute left-0 top-0 opacity-100 
+                ${backgroundColor ? `bg-[${backgroundColor}]` : 'bg-pink-500'} 
+              `}
+            ></div>
           </figure>
         ),
       )}
