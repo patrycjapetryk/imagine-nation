@@ -252,6 +252,68 @@ export interface GallerySliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   description: prismic.KeyTextField;
+
+  /**
+   * Article position field in *Gallery → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: left
+   * - **API ID Path**: gallery.primary.article_position
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  article_position: prismic.SelectField<"left" | "right", "filled">;
+
+  /**
+   * Article type field in *Gallery → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: 1
+   * - **API ID Path**: gallery.primary.article_type
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  article_type: prismic.SelectField<"1" | "2", "filled">;
+
+  /**
+   * Article title field in *Gallery → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.primary.article_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  article_title: prismic.KeyTextField;
+
+  /**
+   * Article description field in *Gallery → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.primary.article_description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  article_description: prismic.KeyTextField;
+
+  /**
+   * Article order field in *Gallery → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.primary.article_order
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  article_order: prismic.NumberField;
+
+  /**
+   * Article order desktop field in *Gallery → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.primary.article_order_desktop
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  article_order_desktop: prismic.NumberField;
 }
 
 /**

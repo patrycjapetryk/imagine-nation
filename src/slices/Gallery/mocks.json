@@ -27,6 +27,36 @@
 				"__TYPE__": "FieldContent",
 				"value": "solid",
 				"type": "Text"
+			},
+			"article_position": {
+				"__TYPE__": "FieldContent",
+				"value": "left",
+				"type": "Select"
+			},
+			"article_type": {
+				"__TYPE__": "FieldContent",
+				"value": "1",
+				"type": "Select"
+			},
+			"article_title": {
+				"__TYPE__": "FieldContent",
+				"value": "last",
+				"type": "Text"
+			},
+			"article_description": {
+				"__TYPE__": "FieldContent",
+				"value": "wrong",
+				"type": "Text"
+			},
+			"article_order": {
+				"__TYPE__": "FieldContent",
+				"value": "62",
+				"type": "Number"
+			},
+			"article_order_desktop": {
+				"__TYPE__": "FieldContent",
+				"value": "65",
+				"type": "Number"
 			}
 		},
 		"items": [
