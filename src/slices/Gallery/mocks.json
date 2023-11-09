@@ -2,7 +2,33 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"header_position": {
+				"__TYPE__": "FieldContent",
+				"value": "left",
+				"type": "Select"
+			},
+			"header_margin_top": {
+				"__TYPE__": "FieldContent",
+				"value": "0",
+				"type": "Select"
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "pilot",
+				"type": "Text"
+			},
+			"subtitle": {
+				"__TYPE__": "FieldContent",
+				"value": "poet",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"value": "solid",
+				"type": "Text"
+			}
+		},
 		"items": [
 			{
 				"__TYPE__": "GroupItemContent",

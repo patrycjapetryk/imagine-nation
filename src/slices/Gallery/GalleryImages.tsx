@@ -34,8 +34,8 @@ const GalleryHeader = ({ slice }: GalleryProps): JSX.Element => {
             key={index}
             className={`
             m-0
-            mx-[${imageMarginX}%]
-            md:mx-[${imageMarginX && imageMarginX - 5}%]
+            mx-[${imageMarginX ? imageMarginX : 0}%]
+            md:mx-[${imageMarginX ? imageMarginX - 5 : 0}%]
             mb-20 md:mb-32
             p-0
             w-[${imageWidth}%] 

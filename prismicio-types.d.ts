@@ -198,6 +198,63 @@ export type PageDocument<Lang extends string = string> =
 export type AllDocumentTypes = FooterDocument | HeaderDocument | PageDocument;
 
 /**
+ * Primary content in *Gallery → Primary*
+ */
+export interface GallerySliceDefaultPrimary {
+  /**
+   * Header position field in *Gallery → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: left
+   * - **API ID Path**: gallery.primary.header_position
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  header_position: prismic.SelectField<"left" | "right", "filled">;
+
+  /**
+   * Header margin top field in *Gallery → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: 0
+   * - **API ID Path**: gallery.primary.header_margin_top
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  header_margin_top: prismic.SelectField<"0" | "52" | "96", "filled">;
+
+  /**
+   * Title field in *Gallery → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Subtitle field in *Gallery → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Description field in *Gallery → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *Gallery → Items*
  */
 export interface GallerySliceDefaultItem {
@@ -287,7 +344,7 @@ export interface GallerySliceDefaultItem {
  */
 export type GallerySliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<GallerySliceDefaultPrimary>,
   Simplify<GallerySliceDefaultItem>
 >;
 
@@ -327,6 +384,7 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
       GallerySlice,
+      GallerySliceDefaultPrimary,
       GallerySliceDefaultItem,
       GallerySliceVariation,
       GallerySliceDefault,
