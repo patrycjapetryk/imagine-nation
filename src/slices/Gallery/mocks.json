@@ -1,0 +1,88 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"image",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118",
+								"width": 4160,
+								"height": 3120
+							},
+							"url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118",
+							"width": 4160,
+							"height": 3120,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"image_position",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "left",
+							"type": "Select"
+						}
+					],
+					[
+						"image_position_desktop",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "left",
+							"type": "Select"
+						}
+					],
+					[
+						"image_width",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "92",
+							"type": "Number"
+						}
+					],
+					[
+						"image_width_desktop",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "46",
+							"type": "Number"
+						}
+					],
+					[
+						"image_margin_y",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "0",
+							"type": "Select"
+						}
+					],
+					[
+						"image_margin_x",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "85",
+							"type": "Number"
+						}
+					]
+				]
+			}
+		]
+	}
+]

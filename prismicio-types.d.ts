@@ -123,7 +123,7 @@ export type HeaderDocument<Lang extends string = string> =
     Lang
   >;
 
-type PageDocumentDataSlicesSlice = RichTextSlice;
+type PageDocumentDataSlicesSlice = GallerySlice;
 
 /**
  * Content for Page documents
@@ -198,48 +198,114 @@ export type PageDocument<Lang extends string = string> =
 export type AllDocumentTypes = FooterDocument | HeaderDocument | PageDocument;
 
 /**
- * Primary content in *RichText → Primary*
+ * Primary content in *Gallery → Items*
  */
-export interface RichTextSliceDefaultPrimary {
+export interface GallerySliceDefaultItem {
   /**
-   * Content field in *RichText → Primary*
+   * Image field in *Gallery → Items*
    *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Lorem ipsum...
-   * - **API ID Path**: rich_text.primary.content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  content: prismic.RichTextField;
+  image: prismic.ImageField<never>;
+
+  /**
+   * Image position field in *Gallery → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: left
+   * - **API ID Path**: gallery.items[].image_position
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  image_position: prismic.SelectField<"left" | "center" | "right", "filled">;
+
+  /**
+   * Image position desktop field in *Gallery → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: left
+   * - **API ID Path**: gallery.items[].image_position_desktop
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  image_position_desktop: prismic.SelectField<
+    "left" | "center" | "right",
+    "filled"
+  >;
+
+  /**
+   * Image width field in *Gallery → Items*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.items[].image_width
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  image_width: prismic.NumberField;
+
+  /**
+   * Image width desktop field in *Gallery → Items*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.items[].image_width_desktop
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  image_width_desktop: prismic.NumberField;
+
+  /**
+   * Image margin x field in *Gallery → Items*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gallery.items[].image_margin_x
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  image_margin_x: prismic.NumberField;
+
+  /**
+   * Image margin y field in *Gallery → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: 0
+   * - **API ID Path**: gallery.items[].image_margin_y
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  image_margin_y: prismic.SelectField<"0" | "-50px" | "-400px", "filled">;
 }
 
 /**
- * Default variation for RichText Slice
+ * Default variation for Gallery Slice
  *
  * - **API ID**: `default`
- * - **Description**: RichText
+ * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type RichTextSliceDefault = prismic.SharedSliceVariation<
+export type GallerySliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<RichTextSliceDefaultPrimary>,
-  never
+  Record<string, never>,
+  Simplify<GallerySliceDefaultItem>
 >;
 
 /**
- * Slice variation for *RichText*
+ * Slice variation for *Gallery*
  */
-type RichTextSliceVariation = RichTextSliceDefault;
+type GallerySliceVariation = GallerySliceDefault;
 
 /**
- * RichText Shared Slice
+ * Gallery Shared Slice
  *
- * - **API ID**: `rich_text`
- * - **Description**: RichText
+ * - **API ID**: `gallery`
+ * - **Description**: Gallery
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type RichTextSlice = prismic.SharedSlice<
-  "rich_text",
-  RichTextSliceVariation
+export type GallerySlice = prismic.SharedSlice<
+  "gallery",
+  GallerySliceVariation
 >;
 
 declare module "@prismicio/client" {
@@ -260,10 +326,10 @@ declare module "@prismicio/client" {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
-      RichTextSlice,
-      RichTextSliceDefaultPrimary,
-      RichTextSliceVariation,
-      RichTextSliceDefault,
+      GallerySlice,
+      GallerySliceDefaultItem,
+      GallerySliceVariation,
+      GallerySliceDefault,
     };
   }
 }
