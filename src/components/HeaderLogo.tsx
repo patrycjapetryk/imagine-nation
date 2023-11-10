@@ -40,7 +40,7 @@ export default function HeaderLogo(props: { data: Content.HeaderDocumentData }):
       <div ref={containerRef} className='w-full pr-[35.5%] mb-[28%]'>
         <PrismicNextImage field={imageStatic} />
       </div>
-      <div className='w-full fixed z-2' style={styles.container}>
+      <div className='w-full fixed z-10' style={styles.container}>
         <PrismicNextImage field={imageFixed} />
       </div>
     </figure>

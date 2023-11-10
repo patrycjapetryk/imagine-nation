@@ -77,6 +77,7 @@ const GalleryImages = ({ slice }: GalleryProps): JSX.Element => {
             image_position_desktop: imagePositionDesktop,
             image_margin_x: imageMarginX,
             image_margin_y: imageMarginY,
+            z_index_10: zIndex10,
           },
           index,
         ) => (
@@ -97,6 +98,7 @@ const GalleryImages = ({ slice }: GalleryProps): JSX.Element => {
             order-${index}
             ${imageMarginY && `lg:mt-[${imageMarginY}]`}
             relative
+            ${zIndex10 && 'z-10'}
           `}
           >
             <PrismicNextImage field={image} className='w-full' />

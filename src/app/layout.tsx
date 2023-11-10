@@ -1,4 +1,5 @@
 import './globals.css';
+
 import { PrismicPreview } from '@prismicio/next';
 import { repositoryName } from '@/prismicio';
 import localFont from 'next/font/local';
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel='icon' type='image/png' sizes='any' href='https://prismic.io/favicon.ico' />
       </head>
+
       <body className='font-body min-h-screen flex justify-center'>
         <div className='flex flex-col items-center w-full max-w-screen-2xl md:px-20 lg:px-28 relative'>
           <Header />

@@ -405,6 +405,17 @@ export interface GallerySliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   image_margin_y: prismic.SelectField<"0" | "-50px" | "-400px", "filled">;
+
+  /**
+   * Z index 10 field in *Gallery → Items*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: gallery.items[].z_index_10
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  z_index_10: prismic.BooleanField;
 }
 
 /**

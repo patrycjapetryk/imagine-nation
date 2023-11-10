@@ -141,6 +141,13 @@
 							"value": "85",
 							"type": "Number"
 						}
+					],
+					[
+						"z_index_10",
+						{
+							"__TYPE__": "BooleanContent",
+							"value": true
+						}
 					]
 				]
 			}

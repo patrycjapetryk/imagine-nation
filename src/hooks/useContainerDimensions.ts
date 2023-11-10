@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect, RefObject } from 'react';
 
 export default function useContainerDimensions(containerRef: RefObject<HTMLDivElement>) {

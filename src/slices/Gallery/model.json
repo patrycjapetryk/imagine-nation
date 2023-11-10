@@ -186,6 +186,15 @@
             ],
             "default_value": "0"
           }
+        },
+        "z_index_10": {
+          "type": "Boolean",
+          "config": {
+            "label": "Z index 10",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       }
     }
