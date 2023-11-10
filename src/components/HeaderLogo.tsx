@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import type { Content } from '@prismicio/client';
 import { PrismicNextImage } from '@prismicio/next';
 
@@ -32,7 +32,7 @@ export default function HeaderLogo(props: { data: Content.HeaderDocumentData }):
   if (windowHeight / 4 > containerY + containerHeight) {
     styles.container.top = windowHeight / 4;
   } else {
-    `${containerY + containerHeight}px`;
+    styles.container.top = `${containerY + containerHeight}px`;
   }
 
   return (
