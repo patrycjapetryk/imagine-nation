@@ -29,8 +29,10 @@ export default function useContainerDimensions(containerRef: RefObject<HTMLDivEl
       setDimensions(getDimensions());
     }
 
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('scroll', handleResize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+      window.addEventListener('scroll', handleResize);
+    }
 
     return () => {
       window.removeEventListener('resize', handleResize);
