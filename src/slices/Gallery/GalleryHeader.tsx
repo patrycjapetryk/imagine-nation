@@ -24,7 +24,7 @@ const GalleryHeader = ({ slice }: GalleryProps): JSX.Element => {
           scrollTrigger: {
             trigger: headerBox,
             start: 'top 80%',
-            end: 'top 30%',
+            end: 'top 40%',
             scrub: true,
           },
         });

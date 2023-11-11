@@ -24,7 +24,7 @@ const GalleryArticle = ({ slice }: GalleryProps): JSX.Element => {
           scrollTrigger: {
             trigger: articleBox,
             start: 'top 80%',
-            end: 'top 20%',
+            end: 'top 40%',
             scrub: true,
           },
         });
