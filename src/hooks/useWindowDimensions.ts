@@ -2,33 +2,28 @@
 
 import { useState, useEffect } from 'react';
 
-function getWindowDimensions() {
-  if (typeof window !== 'undefined') {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-      width,
-      height,
-    };
-  } else {
-    return {
-      width: 0,
-      height: 0,
-    };
-  }
+function getWindowDimensions(getWindow: globalThis.Window & typeof globalThis) {
+  const { innerWidth: width, innerHeight: height } = getWindow;
+  return {
+    width,
+    height,
+  };
 }
 
 export default function useWindowDimensions() {
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
 
   useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
+    function handleWindowDimensions() {
+      setWindowDimensions(getWindowDimensions(window));
     }
+    handleWindowDimensions();
+    window.addEventListener('resize', handleWindowDimensions);
 
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handleResize);
-    }
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleWindowDimensions);
   }, []);
 
   return windowDimensions;
