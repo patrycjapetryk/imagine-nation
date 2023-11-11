@@ -32,7 +32,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='pl' className={avenir.variable}>
       <head>
-        <link rel='icon' type='image/png' sizes='any' href='https://prismic.io/favicon.ico' />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='any'
+          href='https://lifestyle.imagine-nation.pl/favicon.ico'
+        />
       </head>
 
       <body className='font-body min-h-screen flex justify-center'>
