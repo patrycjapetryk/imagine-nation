@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
 
       <body className='font-body min-h-screen flex justify-center'>
-        <div className='flex flex-col items-center w-full max-w-screen-2xl md:px-20 lg:px-28 relative'>
+        <div className='flex flex-col items-center w-full max-w-screen-2xl md:px-8 xl:px-28 relative'>
           <Header />
           {children}
           <Footer />

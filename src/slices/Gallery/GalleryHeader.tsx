@@ -46,20 +46,20 @@ const GalleryHeader = ({ slice }: GalleryProps): JSX.Element => {
       ref={headerWrapper}
       className={`
        
-        absolute left-4 top-0 max-w-[30%] lg:max-w-[22%]
+        absolute left-4 top-0 max-w-[30%] lg:max-w-[20%]
         ${headerPosition == 'right' && 'lg:left-auto lg:right-4'} 
         ${headerMarginTop && `lg:mt-${headerMarginTop}`}
       `}
     >
-      <h2 className='headerBox flex uppercase text-xl sm:text-3xl lg:text-4xl font-black mb-3 opacity-0'>
+      <h2 className='headerBox flex uppercase text-xl sm:text-3xl lg:text-3xl font-black mb-3 opacity-0'>
         {title}
         {subtitle && (
-          <span className='inline-block uppercase text-xxs lg:text-sm my-1.5 lg:my-0.5 mx-1 lg:mx-1.5 font-medium'>
+          <span className='inline-block uppercase text-xxs lg:text-xs my-1.5 lg:my-0.5 mx-1 lg:mx-1.5 font-medium'>
             {subtitle}
           </span>
         )}
       </h2>
-      <p className='headerBox uppercase text-s sm:text-sm lg:text-lg lg:leading-6 opacity-0'>
+      <p className='headerBox uppercase lg:max-w-[90%] text-s sm:text-sm lg:leading-6 opacity-0'>
         {description}
       </p>
     </header>

@@ -46,7 +46,6 @@ const GalleryArticle = ({ slice }: GalleryProps): JSX.Element => {
     <article
       ref={articleWrapper}
       className={`
-      
         flex flex-col
         mb-20
         self-center 
@@ -55,16 +54,16 @@ const GalleryArticle = ({ slice }: GalleryProps): JSX.Element => {
         lg:order-${articleOrderDesktop && articleOrderDesktop - 1}
         ${
           articleType === '2'
-            ? 'lg:self-center lg:mb-[9rem] w-[86%] lg:w-[50%] text-center'
-            : 'lg:mt-[-34rem] lg:mb-[22rem] w-[80%] pr-[5%] lg:w-[30%] lg:pr-0'
+            ? 'lg:self-center lg:mb-[9rem] w-[86%] lg:w-[46%] text-center'
+            : 'lg:mt-[-34rem] lg:mb-[22rem] w-[80%] lg:w-[24%] xl:w-[22%] pr-[5%] lg:pr-0'
         }
         `}
     >
       <h3
         className={`
           articleBox opacity-0
-          max-w-[80%] text-sm xl:text:m uppercase leading-5 
-          ${articleType === '2' ? 'xl:max-w-[50%] mx-auto order-2 mt-8' : ''}
+          max-w-[80%] text-sm xl:text-xs uppercase leading-5 
+          ${articleType === '2' && 'xl:text-sm xl:max-w-[50%] mx-auto order-2 mt-6'}
         `}
       >
         {title}
@@ -76,8 +75,8 @@ const GalleryArticle = ({ slice }: GalleryProps): JSX.Element => {
           mt-3
           ${
             articleType === '2'
-              ? 'text-lg leading-7 xl:text-4xl uppercase font-black'
-              : 'text-xl leading-5 xl:text-3xl font-bold'
+              ? 'text-lg leading-7 xl:text-2xl uppercase font-black'
+              : 'text-xl leading-5 xl:text-xl font-bold'
           }
         `}
       >
