@@ -7,6 +7,8 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
+import parse from 'html-react-parser';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export type GalleryProps = SliceComponentProps<Content.GallerySlice>;
@@ -60,7 +62,7 @@ const GalleryHeader = ({ slice }: GalleryProps): JSX.Element => {
         )}
       </h2>
       <p className='headerBox uppercase lg:max-w-[90%] text-s sm:text-sm lg:leading-6 opacity-0'>
-        {description}
+        {parse(description as string)}
       </p>
     </header>
   );

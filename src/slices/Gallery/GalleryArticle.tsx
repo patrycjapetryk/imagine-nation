@@ -7,6 +7,8 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
+import parse from 'html-react-parser';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export type GalleryProps = SliceComponentProps<Content.GallerySlice>;
@@ -66,7 +68,7 @@ const GalleryArticle = ({ slice }: GalleryProps): JSX.Element => {
           ${articleType === '2' && 'xl:text-sm xl:max-w-[50%] mx-auto order-2 mt-6'}
         `}
       >
-        {title}
+        {parse(title as string)}
       </h3>
 
       <p
@@ -80,7 +82,7 @@ const GalleryArticle = ({ slice }: GalleryProps): JSX.Element => {
           }
         `}
       >
-        {description}
+        {parse(description as string)}
       </p>
     </article>
   );
