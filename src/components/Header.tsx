@@ -10,7 +10,7 @@ export default async function Header() {
   const { arrow } = header.data;
 
   return (
-    <header className='flex flex-col items-center w-full mb-20 mt-44 md:mt-60 xl:mt-24'>
+    <header className='flex flex-col items-center w-full mb-20 mt-44 md:mt-[28vmin] xl:mt-[10vh]'>
       <HeaderLogo data={header.data} />
       <HeaderTitle data={header.data} />
       <PrismicNextImage field={arrow} className='w-7 lg:w-8 mb-10' alt='' />

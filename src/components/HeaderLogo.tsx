@@ -36,7 +36,7 @@ export default function HeaderLogo(props: { data: Content.HeaderDocumentData }):
   }
 
   return (
-    <figure className='flex flex-col w-full md:w-[80%] xl:w-[62.5%] p-5 xs:p-8 lg:p-14'>
+    <figure className='flex flex-col w-full md:w-[80%] xl:w-[62.5%] p-5 xs:p-8 lg:p-14 xl:pb-2'>
       <div ref={containerRef} className='w-full pr-[35.5%] mb-[28%]'>
         <PrismicNextImage field={imageStatic} />
       </div>
