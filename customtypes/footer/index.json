@@ -20,6 +20,13 @@
           "constraint": {},
           "thumbnails": []
         }
+      },
+      "email": {
+        "type": "Text",
+        "config": {
+          "label": "Email",
+          "placeholder": ""
+        }
       }
     }
   }

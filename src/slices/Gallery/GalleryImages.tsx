@@ -29,7 +29,7 @@ const GalleryImages = ({ slice }: GalleryProps): JSX.Element => {
           scrollTrigger: {
             trigger: box,
             start: 'top bottom',
-            end: 'top 20%',
+            end: 'top 15%',
             scrub: true,
           },
         });
@@ -40,8 +40,8 @@ const GalleryImages = ({ slice }: GalleryProps): JSX.Element => {
           opacity: 0,
           scrollTrigger: {
             trigger: boxColor,
-            start: 'top 60%',
-            end: 'bottom 30%',
+            start: 'top 70%',
+            end: 'top 30%',
             scrub: true,
           },
         });
