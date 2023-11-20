@@ -9,14 +9,14 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import parse from 'html-react-parser';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export type GalleryProps = SliceComponentProps<Content.GallerySlice>;
 
-const GalleryArticle = ({ slice }: GalleryProps): JSX.Element => {
+export default function Article({ slice }: GalleryProps): JSX.Element {
   const articleWrapper = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
     const ctx = gsap.context((self) => {
       const boxes: HTMLElement[] = self.selector && self.selector('.articleBox');
 
@@ -86,6 +86,4 @@ const GalleryArticle = ({ slice }: GalleryProps): JSX.Element => {
       </p>
     </article>
   );
-};
-
-export default GalleryArticle;
+}

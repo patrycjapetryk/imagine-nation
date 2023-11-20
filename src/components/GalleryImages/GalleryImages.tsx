@@ -1,55 +1,10 @@
-'use client';
-
 import { Content } from '@prismicio/client';
 import { SliceComponentProps } from '@prismicio/react';
 import { PrismicNextImage } from '@prismicio/next';
 
-import { useRef, useEffect } from 'react';
-import { gsap } from 'gsap/dist/gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
-import GalleryHeader from './GalleryHeader';
-import GalleryArticle from './GalleryArticle';
-
-gsap.registerPlugin(ScrollTrigger);
-
 export type GalleryProps = SliceComponentProps<Content.GallerySlice>;
 
-const GalleryImages = ({ slice }: GalleryProps): JSX.Element => {
-  const imagesWrapper = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context((self) => {
-      const boxes: HTMLElement[] = self.selector && self.selector('.box');
-      const boxColors: HTMLElement[] = self.selector && self.selector('.boxColor');
-
-      boxes.forEach((box) => {
-        gsap.to(box, {
-          scale: 1,
-          scrollTrigger: {
-            trigger: box,
-            start: 'top bottom',
-            end: 'top 15%',
-            scrub: true,
-          },
-        });
-      });
-
-      boxColors.forEach((boxColor) => {
-        gsap.to(boxColor, {
-          opacity: 0,
-          scrollTrigger: {
-            trigger: boxColor,
-            start: 'top 70%',
-            end: 'top 30%',
-            scrub: true,
-          },
-        });
-      });
-    }, imagesWrapper);
-    return () => ctx.revert();
-  }, []);
-
+export default function GalleryImages({ slice }: GalleryProps): JSX.Element {
   const imagePositionX = (item: string | null) => {
     if (item === 'center') {
       return 'self-center';
@@ -63,10 +18,7 @@ const GalleryImages = ({ slice }: GalleryProps): JSX.Element => {
   const { background_color: backgroundColor } = slice.primary;
 
   return (
-    <div ref={imagesWrapper} className='relative flex flex-col flex-wrap w-full'>
-      <GalleryHeader slice={slice} index={0} slices={[]} context={undefined} />
-      <GalleryArticle slice={slice} index={0} slices={[]} context={undefined} />
-
+    <>
       {slice.items.map(
         (
           {
@@ -111,8 +63,6 @@ const GalleryImages = ({ slice }: GalleryProps): JSX.Element => {
           </figure>
         ),
       )}
-    </div>
+    </>
   );
-};
-
-export default GalleryImages;
+}

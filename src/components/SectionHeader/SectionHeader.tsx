@@ -9,14 +9,14 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import parse from 'html-react-parser';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export type GalleryProps = SliceComponentProps<Content.GallerySlice>;
 
-const GalleryHeader = ({ slice }: GalleryProps): JSX.Element => {
+export default function SectionHeader({ slice }: GalleryProps): JSX.Element {
   const headerWrapper = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
     const ctx = gsap.context((self) => {
       const boxes: HTMLElement[] = self.selector && self.selector('.headerBox');
 
@@ -47,7 +47,6 @@ const GalleryHeader = ({ slice }: GalleryProps): JSX.Element => {
     <header
       ref={headerWrapper}
       className={`
-       
         absolute left-4 top-0 max-w-[30%] lg:max-w-[20%]
         ${headerPosition == 'right' && 'lg:left-auto lg:right-4'} 
         ${headerMarginTop && `lg:mt-${headerMarginTop}`}
@@ -66,6 +65,4 @@ const GalleryHeader = ({ slice }: GalleryProps): JSX.Element => {
       </p>
     </header>
   );
-};
-
-export default GalleryHeader;
+}

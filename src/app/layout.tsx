@@ -4,8 +4,8 @@ import { PrismicPreview } from '@prismicio/next';
 import { repositoryName } from '@/prismicio';
 import localFont from 'next/font/local';
 
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
 
 const avenir = localFont({
   src: [
