@@ -6,14 +6,21 @@ import * as prismic from '@prismicio/client';
 import { createClient } from '@/prismicio';
 import { components } from '@/slices';
 
+import Header from '@/components/Header/Header';
+import Footer from '@/components/Footer/Footer';
+
 export default async function Index() {
   const client = createClient();
   const home = await client.getByUID('page', 'home');
 
   return (
-    <main className='flex flex-col items-center w-full'>
-      <SliceZone slices={home.data.slices} components={components} />
-    </main>
+    <>
+      <Header />
+      <main className='flex flex-col items-center w-full'>
+        <SliceZone slices={home.data.slices} components={components} />
+      </main>
+      <Footer />
+    </>
   );
 }
 

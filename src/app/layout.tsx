@@ -4,9 +4,6 @@ import { PrismicPreview } from '@prismicio/next';
 import { repositoryName } from '@/prismicio';
 import localFont from 'next/font/local';
 
-import Header from '@/components/Header/Header';
-import Footer from '@/components/Footer/Footer';
-
 const avenir = localFont({
   src: [
     {
@@ -42,9 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
       <body className='font-body min-h-screen flex justify-center'>
         <div className='flex flex-col items-center w-full max-w-screen-2xl md:px-8 xl:px-28 relative'>
-          <Header />
           {children}
-          <Footer />
         </div>
         <PrismicPreview repositoryName={repositoryName} />
       </body>

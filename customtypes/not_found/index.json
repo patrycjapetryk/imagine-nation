@@ -1,0 +1,34 @@
+{
+  "id": "not_found",
+  "label": "Not found",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "not_found_image": {
+        "type": "Image",
+        "config": {
+          "label": "Not found image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "text": {
+        "type": "Text",
+        "config": {
+          "label": "Text",
+          "placeholder": ""
+        }
+      },
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

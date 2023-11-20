@@ -134,6 +134,60 @@ export type HeaderDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for Not found documents
+ */
+interface NotFoundDocumentData {
+  /**
+   * Not found image field in *Not found*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: not_found.not_found_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  not_found_image: prismic.ImageField<never>;
+
+  /**
+   * Text field in *Not found*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: not_found.text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+
+  /**
+   * Logo field in *Not found*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: not_found.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+}
+
+/**
+ * Not found document from Prismic
+ *
+ * - **API ID**: `not_found`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NotFoundDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<NotFoundDocumentData>,
+    "not_found",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice = GallerySlice;
 
 /**
@@ -206,7 +260,11 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = FooterDocument | HeaderDocument | PageDocument;
+export type AllDocumentTypes =
+  | FooterDocument
+  | HeaderDocument
+  | NotFoundDocument
+  | PageDocument;
 
 /**
  * Primary content in *Gallery → Primary*
@@ -473,6 +531,8 @@ declare module "@prismicio/client" {
       FooterDocumentData,
       HeaderDocument,
       HeaderDocumentData,
+      NotFoundDocument,
+      NotFoundDocumentData,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
