@@ -2,9 +2,16 @@ import { Content } from '@prismicio/client';
 import { SliceComponentProps } from '@prismicio/react';
 import { PrismicNextImage } from '@prismicio/next';
 
+import ImageColor from '@/components/ImageColor/ImageColor';
+
 export type GalleryProps = SliceComponentProps<Content.GallerySlice>;
 
-export default function GalleryImages({ slice }: GalleryProps): JSX.Element {
+export default function GalleryImages({
+  slice,
+  index,
+  slices,
+  context,
+}: GalleryProps): JSX.Element {
   const imagePositionX = (item: string | null) => {
     if (item === 'center') {
       return 'self-center';
@@ -14,8 +21,6 @@ export default function GalleryImages({ slice }: GalleryProps): JSX.Element {
       return 'self-start';
     }
   };
-
-  const { background_color: backgroundColor } = slice.primary;
 
   return (
     <>
@@ -31,10 +36,10 @@ export default function GalleryImages({ slice }: GalleryProps): JSX.Element {
             image_margin_y: imageMarginY,
             z_index_10: zIndex10,
           },
-          index,
+          itemIndex,
         ) => (
           <figure
-            key={index}
+            key={itemIndex}
             className={`
             box
             scale-50
@@ -47,19 +52,14 @@ export default function GalleryImages({ slice }: GalleryProps): JSX.Element {
             lg:w-[${imageWidthDesktop}%] 
             ${imagePositionX(imagePosition)} 
             lg:${imagePositionX(imagePositionDesktop)} 
-            order-${index}
+            order-${itemIndex}
             ${imageMarginY && `lg:mt-[${imageMarginY}]`}
             relative
             ${zIndex10 && 'z-10'}
           `}
           >
             <PrismicNextImage field={image} className='w-full' />
-            <div
-              className={`
-                boxColor w-full h-full absolute left-0 top-0 opacity-100 
-                ${backgroundColor ? `bg-[${backgroundColor}]` : 'bg-pink-500'} 
-              `}
-            ></div>
+            <ImageColor slice={slice} index={index} slices={slices} context={context} />
           </figure>
         ),
       )}

@@ -7,11 +7,17 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-import parse from 'html-react-parser';
+import SectionHeaderTitle from './SectionHeaderTitle';
+import SectionHeaderParagraph from './SectionHeaderParagraph';
 
 export type GalleryProps = SliceComponentProps<Content.GallerySlice>;
 
-export default function SectionHeader({ slice }: GalleryProps): JSX.Element {
+export default function SectionHeader({
+  slice,
+  index,
+  slices,
+  context,
+}: GalleryProps): JSX.Element {
   const headerWrapper = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -35,13 +41,7 @@ export default function SectionHeader({ slice }: GalleryProps): JSX.Element {
     return () => ctx.revert();
   }, []);
 
-  const {
-    header_position: headerPosition,
-    header_margin_top: headerMarginTop,
-    title,
-    subtitle,
-    description,
-  } = slice.primary;
+  const { header_position: headerPosition, header_margin_top: headerMarginTop } = slice.primary;
 
   return (
     <header
@@ -52,17 +52,8 @@ export default function SectionHeader({ slice }: GalleryProps): JSX.Element {
         ${headerMarginTop && `lg:mt-${headerMarginTop}`}
       `}
     >
-      <h2 className='headerBox flex uppercase text-xl sm:text-3xl lg:text-3xl font-black mb-3 opacity-0'>
-        {title}
-        {subtitle && (
-          <span className='inline-block uppercase text-xxs lg:text-xs my-1.5 lg:my-0.5 mx-1 lg:mx-1.5 font-medium'>
-            {subtitle}
-          </span>
-        )}
-      </h2>
-      <p className='headerBox uppercase lg:max-w-[90%] text-s sm:text-sm lg:leading-6 opacity-0'>
-        {parse(description as string)}
-      </p>
+      <SectionHeaderTitle slice={slice} index={index} slices={slices} context={context} />
+      <SectionHeaderParagraph slice={slice} index={index} slices={slices} context={context} />
     </header>
   );
 }

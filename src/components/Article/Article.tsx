@@ -9,9 +9,12 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 import parse from 'html-react-parser';
 
+import ArticleTitle from './ArticleTitle';
+import ArticleParagraph from './ArticleParagraph';
+
 export type GalleryProps = SliceComponentProps<Content.GallerySlice>;
 
-export default function Article({ slice }: GalleryProps): JSX.Element {
+export default function Article({ slice, index, slices, context }: GalleryProps): JSX.Element {
   const articleWrapper = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -38,7 +41,6 @@ export default function Article({ slice }: GalleryProps): JSX.Element {
   const {
     article_position: articlePosition,
     article_title: title,
-    article_description: description,
     article_order: articleOrder,
     article_order_desktop: articleOrderDesktop,
     article_type: articleType,
@@ -61,29 +63,8 @@ export default function Article({ slice }: GalleryProps): JSX.Element {
         }
         `}
     >
-      <h3
-        className={`
-          articleBox opacity-0
-          max-w-[80%] text-sm xl:text-xs uppercase leading-5 
-          ${articleType === '2' && 'xl:text-sm xl:max-w-[50%] mx-auto order-2 mt-6'}
-        `}
-      >
-        {parse(title as string)}
-      </h3>
-
-      <p
-        className={`
-          articleBox opacity-0
-          mt-3
-          ${
-            articleType === '2'
-              ? 'text-lg leading-7 xl:text-2xl uppercase font-black'
-              : 'text-xl leading-5 xl:text-xl font-bold'
-          }
-        `}
-      >
-        {parse(description as string)}
-      </p>
+      <ArticleTitle slice={slice} index={index} slices={slices} context={context} />
+      <ArticleParagraph slice={slice} index={index} slices={slices} context={context} />
     </article>
   );
 }
