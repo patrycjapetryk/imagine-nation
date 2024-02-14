@@ -1,3 +1,6 @@
+
+![imagine](https://github.com/patrycjapetryk/imagine-nation/assets/51820512/2363f3d0-84a5-429f-8130-97d720319034)
+
 # Agency Portfolio Page
 
 Portfolio Page made for Imagine Nation Agency. It is built with Next.js, TypeScript, and Prismic CMS.
@@ -6,4 +9,15 @@ Portfolio Page made for Imagine Nation Agency. It is built with Next.js, TypeScr
 
 &nbsp;
 
-![Website screenshot](https://images.prismic.io/imagine-nation/654e4009531ac2845a252619_FB_IMAGINE.jpg?auto=format%2Ccompress&rect=0%2C0%2C1200%2C630&w=2400&h=1260)
+https://github.com/patrycjapetryk/imagine-nation/assets/51820512/4d10a53f-4138-4e28-b1ab-fa3bf32d3b18
+
+&nbsp;
+
+## How to use it?
+
+Download it, install dependencies and run the following command:
+
+```sh
+npm run dev
+```
+
