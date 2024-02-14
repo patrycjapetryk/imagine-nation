@@ -3,7 +3,7 @@
 
 # Agency Portfolio Page
 
-Portfolio Page made for Imagine Nation Agency. It is built with Next.js, TypeScript, and Prismic CMS.
+Portfolio Page made for Imagine Nation Agency. It is built with Next.js, TypeScript, Tailwind CSS, GSAP and Prismic CMS.
 
 **Online version**: [lifestyle.imagine-nation.pl](https://lifestyle.imagine-nation.pl)
 
